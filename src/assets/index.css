@@ -1,0 +1,163 @@
+body {
+  background-color: rgb(67, 121, 156);
+  user-select: none;
+}
+
+main {
+  margin: 20px auto;
+  max-width: 900px;
+  padding: 0 50px;
+}
+
+h1 {
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+
+/******Vocabularies*******/
+div.vocabularies {
+  margin-top: 20px;
+}
+section.vocabulary {
+  background-color: rgba(255, 255, 255, 0.774);
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 2px solid gray;
+}
+div.voc-name {
+  margin-bottom: 5px;
+  font-size: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+section.count-of-rep-sec {
+  padding-right: 20px;
+}
+
+a.btn {
+  margin-right: 5px;
+}
+/**********************/
+
+/*****name of vocabulary*****/
+label {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+input.form-control {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+/****************************/
+
+/**inputs in adding words**/
+div.input {
+  display: inline-block;
+  width: 45%;
+}
+div.inputs {
+  display: flex;
+  justify-content: space-between;
+}
+/**************************/
+
+/********Opened vocabulary********/
+div.words-in-voc{
+  margin-top: 20px;
+}
+div.container-for-word-pairs {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+div.word {
+  background-color: rgba(255, 255, 255, 0.774);
+  width: 49%;
+  border: 2px solid gray;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 5px 10px;
+}
+div.selected-word {
+  background-color: rgb(43, 177, 226);
+  width: 49%;
+  border: 2px solid gray;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 5px 10px;
+}
+div.word-pairs {
+  display: inline-flex;
+  width: calc(100% - 100px);
+  justify-content: space-between;
+}
+div.links {
+  align-self: center;
+}
+/*********************************/
+
+/*********************************************/
+/********Playing connecting words*************/
+/*********************************************/
+div.h1-plus-buttons {
+  width: 600px;
+  margin: 0 auto;
+}
+div.games-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+div.word-pairs.game {
+  margin-top: 10px;
+}
+div.selected {
+  background-color: rgb(43, 177, 226);
+}
+div.guessed {
+  visibility: hidden;
+}
+div.wrong {
+  background-color: rgb(226, 43, 43);
+}
+/*********************************************/
+
+/*********************************************/
+/********Playing connecting words*************/
+/*********************************************/
+div.word-to-guess {
+  width: fit-content;
+  margin: 10px auto;
+  font-size: 30px;
+}
+div.words-variants {
+  margin-top: 10px;
+}
+/*********************************************/
+/**********search***********/
+form.search-form {
+  display: flex;
+}
+div.inputInForm {
+  width: 400px;
+}
+div.buttonInput {
+  padding-left: 20px;
+  padding-top: 5px;
+}
+/***************************/
+
+div.vocSearchPan {
+  display: flex;
+  justify-content: space-between;
+}
+div.countT {
+  font-size: 20px;
+  margin: auto 0;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.774);
+  border-radius: 5px;
+  border: 1px solid black;
+}
