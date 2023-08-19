@@ -39,6 +39,7 @@ export default function ListVocabularies({ setOpenedVoc }) {
 
   useEffect(() => {
     ipcRenderer.send('give-vocabularies')
+    searchRef.current.focus()
   })
 
   function showNotification(message) {

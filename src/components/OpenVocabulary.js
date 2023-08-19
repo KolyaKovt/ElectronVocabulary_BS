@@ -24,6 +24,7 @@ export default function OpenVocabulary({
 
   useEffect(() => {
     ipcRenderer.send('give-vocabulary', openedVoc)
+    searchRef.current.focus()
   })
 
   useEffect(() => {
@@ -92,8 +93,8 @@ export default function OpenVocabulary({
       const secLangWord = voc.secLang[j]
 
       if (
-        firstLangWord.toLowerCase().includes(word.toLowerCase()) ||
-        secLangWord.toLowerCase().includes(word.toLowerCase())
+        firstLangWord.toLowerCase().includes(word.toLowerCase().trim()) ||
+        secLangWord.toLowerCase().includes(word.toLowerCase().trim())
       ) {
         indecies.push(j)
         break

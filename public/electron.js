@@ -79,8 +79,8 @@ ipcMain.on('give-names-who-has', async (event, word) => {
       const firstLangWord = voc.firstLang[j];
       const secLangWord = voc.secLang[j];
       
-      if (firstLangWord.toLowerCase().includes(word.toLowerCase()) || 
-      secLangWord.toLowerCase().includes(word.toLowerCase())) {
+      if (firstLangWord.toLowerCase().includes(word.toLowerCase().trim()) || 
+      secLangWord.toLowerCase().includes(word.toLowerCase().trim())) {
         names.push(voc.name)
         break
       }
