@@ -24,14 +24,15 @@ export default function OpenVocabulary({
 
   useEffect(() => {
     ipcRenderer.send('give-vocabulary', openedVoc)
-    searchRef.current.focus()
   })
-
+  
   useEffect(() => {
+    searchRef.current.focus()
+    
     const handler = e => escapeHandler(e, escapeRef)
-
+    
     document.addEventListener('keydown', handler)
-
+    
     ipcRenderer.on('get-vocabulary', (event, vocabulary) =>
       setVocabulary(vocabulary)
     )

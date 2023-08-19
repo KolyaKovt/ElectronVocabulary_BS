@@ -11,8 +11,10 @@ const { ipcRenderer } = window.require('electron')
 export default function ListVocabularies({ setOpenedVoc }) {
   const [vocabularies, setVocabularies] = useState([])
   const searchRef = useRef(null)
-
+  
   useEffect(() => {
+    searchRef.current.focus()
+    
     ipcRenderer.on('get-vocabularies', (event, vocabularies) =>
       setVocabularies(vocabularies)
     )
@@ -39,7 +41,6 @@ export default function ListVocabularies({ setOpenedVoc }) {
 
   useEffect(() => {
     ipcRenderer.send('give-vocabularies')
-    searchRef.current.focus()
   })
 
   function showNotification(message) {
