@@ -11,10 +11,10 @@ const { ipcRenderer } = window.require('electron')
 export default function ListVocabularies({ setOpenedVoc }) {
   const [vocabularies, setVocabularies] = useState([])
   const searchRef = useRef(null)
-  
+
   useEffect(() => {
     searchRef.current.focus()
-    
+
     ipcRenderer.on('get-vocabularies', (event, vocabularies) =>
       setVocabularies(vocabularies)
     )
@@ -62,10 +62,13 @@ export default function ListVocabularies({ setOpenedVoc }) {
 
   return (
     <main>
-      <Search searchRef={searchRef} action={searchWords} />
-      <Link className="btn btn-success" to="/new">
-        New vocabulary
-      </Link>
+      <div className="topDiv">
+        <Search searchRef={searchRef} action={searchWords} />
+        <Link className="btn btn-success" to="/new">
+          New vocabulary
+        </Link>
+      </div>
+      <div className='fillTopDiv'></div>
       <div className="vocabularies">
         {vocabularies.map(vocabulary => {
           return (

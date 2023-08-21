@@ -25,14 +25,14 @@ export default function OpenVocabulary({
   useEffect(() => {
     ipcRenderer.send('give-vocabulary', openedVoc)
   })
-  
+
   useEffect(() => {
     searchRef.current.focus()
-    
+
     const handler = e => escapeHandler(e, escapeRef)
-    
+
     document.addEventListener('keydown', handler)
-    
+
     ipcRenderer.on('get-vocabulary', (event, vocabulary) =>
       setVocabulary(vocabulary)
     )
@@ -107,35 +107,38 @@ export default function OpenVocabulary({
 
   return (
     <main>
-      <div className="vocSearchPan">
-        <Search searchRef={searchRef} action={searchWords} />
-        <div>
-          <div className="countT">
-            CW: {vocabulary.firstLang.length} CR:{' '}
-            {vocabulary.countOfRepetitions}
+      <div className="topDiv">
+        <div className="vocSearchPan">
+          <Search searchRef={searchRef} action={searchWords} />
+          <div>
+            <div className="countT">
+              CW: {vocabulary.firstLang.length} CR:{' '}
+              {vocabulary.countOfRepetitions}
+            </div>
           </div>
         </div>
+        <Link className="btn btn-secondary" to="/" ref={escapeRef}>
+          Cancel
+        </Link>
+        <Link className="btn btn-success" to="/words/add">
+          Add words
+        </Link>
+        <Link className="btn btn-primary" to="/play/connecting-words">
+          Play connecting words
+        </Link>
+        <Link className="btn btn-dark" to="/play/guessing-words">
+          Play guessing word
+        </Link>
+        {selectedWords.length > 0 && (
+          <>
+            <Link className="btn btn-success" to="/words/move">
+              Move
+            </Link>
+            <Question action={deleteSelectedWords} />
+          </>
+        )}
       </div>
-      <Link className="btn btn-secondary" to="/" ref={escapeRef}>
-        Cancel
-      </Link>
-      <Link className="btn btn-success" to="/words/add">
-        Add words
-      </Link>
-      <Link className="btn btn-primary" to="/play/connecting-words">
-        Play connecting words
-      </Link>
-      <Link className="btn btn-dark" to="/play/guessing-words">
-        Play guessing word
-      </Link>
-      {selectedWords.length > 0 && (
-        <>
-          <Link className="btn btn-success" to="/words/move">
-            Move
-          </Link>
-          <Question action={deleteSelectedWords} />
-        </>
-      )}
+      <div className="fillTopDiv"></div>
       <div className="words-in-voc">
         {vocabulary.firstLang.map((word, index) => {
           return (

@@ -2,21 +2,31 @@ body {
   background-color: rgb(67, 121, 156);
   user-select: none;
 }
-
 main {
-  margin: 20px auto;
+  margin: 0 auto;
   max-width: 900px;
   padding: 0 50px;
 }
-
 h1 {
   font-size: 50px;
   margin-bottom: 30px;
 }
 
+div.topDiv {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 801px;
+  position: fixed;
+  background: linear-gradient(to bottom, rgb(67, 120, 156) 0%, rgb(67, 120, 156) 90%, rgba(67, 120, 156, 0.604) 100%);
+}
+div.fillTopDiv {
+  width: 100%;
+  height: 136.2px;
+}
+
 /******Vocabularies*******/
 div.vocabularies {
-  margin-top: 20px;
+  margin-bottom: 20px;
 }
 section.vocabulary {
   background-color: rgba(255, 255, 255, 0.774);
@@ -64,7 +74,7 @@ div.inputs {
 
 /********Opened vocabulary********/
 div.words-in-voc{
-  margin-top: 20px;
+  margin-bottom: 20px;
 }
 div.container-for-word-pairs {
   display: flex;
