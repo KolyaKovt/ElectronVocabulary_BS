@@ -98,7 +98,6 @@ export default function OpenVocabulary({
         secLangWord.toLowerCase().includes(word.toLowerCase().trim())
       ) {
         indecies.push(j)
-        break
       }
     }
 
